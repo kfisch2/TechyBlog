@@ -1,0 +1,10 @@
+<p class='welcome'> WELCOME TO THE BLOG OF TEKKEEZ </p>
+<ol class="post-list">
+  {{!-- for each post, a li is created --}}
+  {{#each posts as |post|}}
+  <li>
+    {{!--to use a partial in hbs, we use > --}}
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>
