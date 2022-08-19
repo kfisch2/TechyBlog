@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
       //.get provides us with
       res.render('homepage', {
         posts,
+
       });
     })
     .catch((err) => {
@@ -27,14 +28,13 @@ router.get('/', (req, res) => {
 });
 
 // // Renders login page
-// router.get("/login", (req, res) => {
-//   if (req.session.loggedIn) {
-//     console.log("logged in!");
-//     res.redirect("/");
-//     return;
-//   }
-//   res.render("login");
-// });
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
+});
 
 // // Single post page
 // router.get("/post/:id", (req, res) => {

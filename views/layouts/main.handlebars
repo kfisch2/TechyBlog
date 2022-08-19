@@ -3,6 +3,16 @@
     <title>Techy Blog</title>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script
+      src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'
+    ></script>
     <link rel='stylesheet' href='\stylesheets\style.css' />
     <link
       rel='stylesheet'
@@ -16,12 +26,14 @@
 
     <!-- Header -->
     <header>
-      <h1>Welcome to Techy Blog!</h1>
+
       <nav>
-        <button>Home</button>
-        <button>Dashboard</button>
-        <button>Login</button>
+        <a href='/' class='homeBtn'>Home</a>
+        <a href='/dashboard' class='dashboardBtn'>Dashboard</a>
+        <a href='/login' class='loginBtn'>Login</a>
       </nav>
+
+      <h3>Techy Blog</h3>
     </header>
     <main>
       {{{body}}}
@@ -31,5 +43,7 @@
       <p>Made with love by
         <a href='github.com/kfisch2' target='_blank'>Kayla Fischer</a></p>
     </footer>
+
+    <script src='/js/logout.js'></script>
   </body>
 </html>
