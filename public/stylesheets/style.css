@@ -1,30 +1,38 @@
 * {
-  background-color: lightblue;
+  /* background-color: rgb(204, 231, 240); */
 }
 
 header nav {
   background-color: #05c0a7;
 }
 
+header h3 {
+  margin-left: 50px;
+}
+
 nav a {
   margin: 25px;
+  font-size: 35px;
 }
 
 nav a:hover {
-  color: black;
+  color: rgba(4, 43, 13, 0.568);
   background-color: rgba(255, 255, 255, 0.658);
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   font-style: italic;
+  border-radius: 3px;
+  padding: 5px;
 }
 
-label {
+input-field>label {
   color: black;
+  font-size: 2rem;
 }
 .row {
   margin: 25px 60px;
 }
 
-.loginRow, .signupRow {
+.loginRow,
+.signupRow {
   margin-left: 5px;
 }
-
