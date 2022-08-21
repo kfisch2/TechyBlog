@@ -1,9 +1,7 @@
-<p class='welcome'> WELCOME TO THE BLOG OF TEKKEEZ </p>
+<h3 class='welcome' style="text-align: center;"> Welcome, fellow Tech nerd</h3>
 <ol class="post-list">
-  {{!-- for each post, a li is created --}}
   {{#each posts as |post|}}
-  <li>
-    {{!--to use a partial in hbs, we use > --}}
+  <li class="post">
     {{> post-info post }}
   </li>
   {{/each}}

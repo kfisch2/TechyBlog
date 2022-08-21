@@ -1,7 +1,10 @@
 * {
-  /* background-color: rgb(204, 231, 240); */
+  /* background-color: rgb(204, 240, 229); */
 }
 
+header {
+  text-align: right;
+}
 header nav {
   background-color: #05c0a7;
 }
@@ -24,7 +27,7 @@ nav a:hover {
   padding: 5px;
 }
 
-input-field>label {
+input-field > label {
   color: black;
   font-size: 2rem;
 }
