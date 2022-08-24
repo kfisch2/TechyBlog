@@ -21,11 +21,9 @@
 
     <!-- Header -->
     <header>
-
       <nav>
-        <a href='/' class='homeBtn'>home</a>
         {{#if loggedIn}}
-          <a href='/dashboard' class='dashboardBtn'>dashboard</a>
+          <a href='/dashboard'>dashboard</a>
           <a href='/' class='logoutBtn'>logout</a>
         {{else}}
           <a href='/login' class='loginBtn'>login/signup</a>
@@ -42,8 +40,8 @@
     </main>
     <!-- Footer -->
     <footer>
-      <p>Made with love by
-        <a href='github.com/kfisch2' target='_blank'>Kayla Fischer</a></p>
+      Made with love by
+      <a href='github.com/kfisch2' target='_blank'>Kayla Fischer</a>
     </footer>
 
     <!-- Compiled and minified JavaScript -->
