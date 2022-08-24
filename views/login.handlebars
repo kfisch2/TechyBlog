@@ -1,45 +1,32 @@
 <div class='row'>
   {{! LOGIN }}
-  <form class='col s5 loginRow'>
-
+  <form class='col s5 login-form'>
     <div class='row'>
       <div class='input-field col s6'>
-        <input id='loginUsername' type='text' class='validate' />
-        <label for='loginUsername'>Username</label>
+        <input id='login-username' type='text' class='validate' />
+        <label for='login-username'>Username</label>
       </div>
     </div>
 
     <div class='row'>
       <div class='input-field col s6'>
-        <input id='loginPassword' type='password' class='validate' />
-        <label for='loginPassword'>Password</label>
+        <input id='login-password' type='password' class='validate' />
+        <label for='login-password'>Password</label>
       </div>
     </div>
 
-    <a class='waves-effect waves-light btn'>Login</a>
+    <div>
+      <button class='waves-effect waves-light btn btn-large'>Login</button>
+    </div>
 
   </form>
 
   {{! SIGN UP }}
-  <form class='col s7 signupRow'>
-    <div class='row'>
-      <div class='input-field col s6'>
-        <input id='register-name' type='text' class='validate' />
-        <label for='register-name'>First Name</label>
-      </div>
-    </div>
-
+  <form class='col s7 register-form'>
     <div class='row'>
       <div class='input-field col s6'>
         <input id='register-username' type='text' class='validate' />
         <label for='register-username'>Username</label>
-      </div>
-    </div>
-
-    <div class='row'>
-      <div class='input-field col s6'>
-        <input id='registerPassword' type='password' class='validate' />
-        <label for='registerPassword'>Password</label>
       </div>
     </div>
 
@@ -50,6 +37,17 @@
       </div>
     </div>
 
-    <a class='waves-effect waves-light btn'>Sign up</a>
+    <div class='row'>
+      <div class='input-field col s6'>
+        <input id='register-password' type='password' class='validate' />
+        <label for='register-password'>Password</label>
+      </div>
+    </div>
+
+    <div>
+      <button class='waves-effect waves-light btn btn-large'>Sign up</button>
+    </div>
   </form>
 </div>
+
+<script src='/js/login.js'></script>

@@ -1,7 +1,31 @@
-<h2>{{user.username}}</h2>
+<h2>Hello, {{user.sername}}</h2>
+<p style="font-style: italic;">Got something on your mind? Share with your techie friends</p>
 
-{{!-- {{#if posts.length}} --}}
-<section class="col m7">
+
+<section class="col s12 m4 l6 new-post"> 
+  <h4>Create a new post</h4>
+  {{!-- Post title--}}
+  <form class="new-post-form">
+    <div class='row'>
+      <div class='input-field col s6'>
+        <input id='post-title' type='text' />
+        <label for='post-title' class="placeholder">Title</label>
+      </div>
+    </div>
+    {{!--Text area--}}
+    <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Type away!</label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-large">Add to your blog</button>
+  </form>
+</section>
+
+<section class="col s12 m8 l6 posts">
+  {{#if posts.length}}
   <h4>Your Posts</h4>
   <ol>
     {{#each posts as |post|}}
@@ -11,30 +35,10 @@
     </li>
     {{/each}}
   </ol>
+  {{else}}
+  <h4>Your posts</h4>
+  <h5>Nothing yet</h5>
+  {{/if}}
 </section>
-{{!-- {{/if}} --}}
 
-<section class="col m5"> 
-<h4>Create a new post</h4>
-
-<form class="new-post-form">
-
-    <div class='row'>
-      <div class='input-field col s6'>
-        <input id='post-title' type='text' />
-        <label for='post-title'>Title</label>
-      </div>
-    </div>
-
-
-  {{!-- NEEDS TO BE A TEXT BOX --}}
-    <div class='row'>
-      <div class='input-field col s6'>
-        <input id='post-text' type='' />
-        <label for='post-text'>Type away!</label>
-      </div>
-    </div>
-<button type="submit" class="btn">Add to your blog</button>
-</form>
-</section>
 

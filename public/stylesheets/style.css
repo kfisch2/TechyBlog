@@ -1,41 +1,117 @@
-* {
-  /* background-color: rgb(204, 240, 229); */
-}
-
 header {
-  text-align: right;
+  justify-content: center;
+  position: -webkit-sticky;
+  top: 0;
+  position: sticky;
+  background-image: url('https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg?w=2000');
+  background-size: cover;
+  background-attachment: fixed;
 }
+
 header nav {
-  background-color: #05c0a7;
+  justify-content: right;
+  background-color: #0d0c1d;
+  background-size: cover;
+  display: flex;
+  justify-content: right;
+  padding-bottom: 10px;
 }
 
-header h3 {
-  margin-left: 50px;
-}
-
-nav a {
-  margin: 25px;
+header nav a {
   font-size: 35px;
+  margin-right: 25px;
+  display: inline-block;
+  position: relative;
+  color: rgb(255, 255, 255); 
+
 }
 
-nav a:hover {
-  color: rgba(4, 43, 13, 0.568);
-  background-color: rgba(255, 255, 255, 0.658);
-  animation-delay: 0.5s;
+header nav a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.15s ease-out;
+}
+
+header nav a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.logo span {
+  color: #ffffff;
+  background-color: #0d0c1d;
+  margin-left: 35px;
   font-style: italic;
-  border-radius: 3px;
-  padding: 5px;
+  padding: 5px 20px 5px 15px;
+  border-radius: 5px;
 }
 
-input-field > label {
-  color: black;
-  font-size: 2rem;
-}
-.row {
-  margin: 25px 60px;
+body {
+  /* background-color: rgba(56, 153, 47, 0.473); */
+  background-image: url("https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg?w=2000");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.loginRow,
-.signupRow {
+.input-field label {
+  color: #282950;
+  font-size: 1.5rem;
+}
+
+.btn {
+  color: azure;
+  background-color: #0d0c1d88
+}
+
+.btn:hover{
+  color: azure;
+  background-color: #282950;
+}
+
+.loginForm,
+.signupForm {
   margin-left: 5px;
+}
+
+li {
+  border-style: solid;
+  color: rgb(0, 0, 0);
+  padding-left: 48px;
+  list-style: none;
+  font-size: 25px;
+  border-color: #0d0c1d;
+  border-width: 5px;
+  margin-bottom: 10px;
+}
+
+li:nth-child(odd) {
+  background-color: #fbfdff;
+}
+
+li:nth-child(even) {
+  background-color: #c8d6d6;
+
+}
+
+.new-post {
+  position: sticky;
+  padding: 20px;
+  color: #282950;
+  border: #282950;
+  border-style: solid;
+  border-width: 5px;
+  background-color: rgb(255, 255, 255);
+}
+
+.posts {
+ 
 }
