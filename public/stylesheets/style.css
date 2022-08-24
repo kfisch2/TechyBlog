@@ -102,8 +102,9 @@ li:nth-child(even) {
 
 }
 
-.new-post {
-  position: sticky;
+.new-post, .comment-form {
+  /* position: sticky; */
+  z-index: -999;
   padding: 20px;
   color: #282950;
   border: #282950;
@@ -112,6 +113,11 @@ li:nth-child(even) {
   background-color: rgb(255, 255, 255);
 }
 
-.posts {
- 
+/* .comments:nth-child(odd) {
+  background-color: #fbfdff;
 }
+
+.comments:nth-child(even) {
+  background-color: #c8d6d6;
+
+} */

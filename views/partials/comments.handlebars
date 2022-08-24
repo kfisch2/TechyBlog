@@ -1,15 +1,21 @@
-<div class="comments">
-  {{!-- post.comments can't be destructured in a nice way, so we use 'this' to access post.comments --}}
-  {{#each this }}
-    <section class="comment">
-      <div class="meta">
-        {{user.username}}
-        on
-        {{format_date created_at}}
-      </div>
-      <div class="text">
-        {{comment_text}}
-      </div>
-    </section>
-  {{/each}}
+<div>
+  <h4>Comments</h4>
+  {{! post.comments can't be destructured in a nice way, so we use 'this' to access post.comments }}
+  <ul>
+    {{#each this}}
+      <li>
+        <section class='comment'>
+          <div class='text'>
+            "{{comment_text}}"
+          </div>
+
+          <div class='meta'>
+            -{{user.username}}
+            ({{format_date created_at}})
+          </div>
+
+        </section>
+      </li>
+    {{/each}}
+  </ul>
 </div>

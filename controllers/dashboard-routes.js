@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Post, User, Comment } = require('../models');
 
-// homepage for /dashboard
+// /dashboard
 router.get('/', withAuth, (req, res) => {
   console.log(req.session)
   Post.findAll({
@@ -11,9 +11,11 @@ router.get('/', withAuth, (req, res) => {
       // use the ID from the session
       user_id: req.session.user_id,
     },
+    order: [['created_at', 'DESC']],
     attributes: [
       'id',
       'title',
+      'post_text',
       'created_at',
     ],
     include: [
@@ -48,7 +50,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ['id', 'title', 'created_at'],
+    attributes: ['id', 'title', 'post_text', 'created_at'],
     include: [
       {
         model: Comment,

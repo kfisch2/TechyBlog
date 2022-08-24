@@ -6,7 +6,7 @@ const { Post, User, Comment } = require('../../models');
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: ['id', 'title', 'post_text', 'created_at'],
-    order: [['created_at', 'ASC']],
+    order: [['created_at', 'DESC']],
     include: [
       {
         model: User,
@@ -72,7 +72,7 @@ router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     post_text: req.body.post_text,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
