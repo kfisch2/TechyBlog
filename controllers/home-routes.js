@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
       //.get provides us with
       res.render('homepage', {
         posts,
-
       });
     })
     .catch((err) => {
@@ -28,63 +27,62 @@ router.get('/', (req, res) => {
 });
 
 // // Renders login page
-router.get("/login", (req, res) => {
+router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
-  res.render("login");
+  res.render('login');
 });
 
 // // Single post page
-// router.get("/post/:id", (req, res) => {
-//   Post.findOne({
-//     where: {
-//       id: req.params.id,
-//     },
-//     attributes: [
-//       "id",
-//       "post_url",
-//       "title",
-//       "created_at",
-//       [
-//         sequelize.literal(
-//           "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
-//         ),
-//         "vote_count",
-//       ],
-//     ],
-//     include: [
-//       {
-//         model: Comment,
-//         attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-//         include: {
-//           model: User,
-//           attributes: ["username"],
-//         },
-//       },
-//       {
-//         model: User,
-//         attributes: ["username"],
-//       },
-//     ],
-//   })
-//     .then((dbPostData) => {
-//       if (!dbPostData) {
-//         res.status(404).json({ message: "Post with that id does not exist" });
-//         return;
-//       }
+router.get('/post/:id', (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      [
+        sequelize.literal(
+          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
+        ),
+        'vote_count',
+      ],
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'Post with that id does not exist' });
+        return;
+      }
 
-//       // serialize the data
-//       const post = dbPostData.get({ plain: true });
+      // serialize the data
+      const post = dbPostData.get({ plain: true });
 
-//       // pass data to template
-//       res.render("single-post", {
-//         post,
-//         loggedIn: req.session.loggedIn,
-//       });
-//     })
-//     .catch((err) => res.status(500).json(err));
-// });
+      // pass data to template
+      res.render('single-post', {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => res.status(500).json(err));
+});
 
 module.exports = router;

@@ -2,23 +2,47 @@
 async function loginHandler(event) {
   event.preventDefault();
 
-  const username = document.querySelector('#user-login').value.trim();
+  const username = document.querySelector('#login-username').value.trim();
   const password = document.querySelector('#login-password').value.trim();
 
-  if (username && password) {
+  if (!username || !password) {
+    // modal code
+    var elems = document.querySelector('.modal');
+    const instance = M.Modal.init(elems);
+
+    // open the modal
+    instance.open();
+
+    // event listener button to close instance
+    let closeHandler = document.querySelector('.modal-close');
+    closeHandler.addEventListener('click', function () {
+      instance.close();
+    });
+  } else if (username && password) {
     const response = await fetch('/api/users/login', {
-      medthod: 'post',
+      method: 'post',
       body: JSON.stringify({
         username,
         password,
       }),
-      headers: { 'Content-type': 'applcation/json' },
+      headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert('Incorrect username or password');
+      // modal code
+      var elems = document.querySelector('#modal3');
+      const instance = M.Modal.init(elems);
+
+      // open the modal
+      instance.open();
+
+      // event listener button to close instance
+      let closeHandler = document.querySelector('.modal-close');
+      closeHandler.addEventListener('click', function () {
+        instance.close();
+      });
     }
   }
 }
@@ -31,7 +55,20 @@ async function registerHandler(event) {
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#register-password').value.trim();
 
-  if (username && first_name && email && password) {
+  if (!username || !password || !email) {
+    // modal code
+    var elems = document.querySelector('#modal2');
+    const instance = M.Modal.init(elems);
+
+    // open the modal
+    instance.open();
+
+    // event listener button to close instance
+    let closeHandler = document.querySelector('.modal-close');
+    closeHandler.addEventListener('click', function () {
+      instance.close();
+    });
+  } else if (username && email && password) {
     const response = await fetch('/api/users', {
       method: 'post',
       body: JSON.stringify({
@@ -43,9 +80,21 @@ async function registerHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      console.log('here');
+      document.location.replace('/dashboard/');
     } else {
-      alert('Username or email already in use');
+      // modal code
+      var elems = document.querySelector('#modal4');
+      const instance = M.Modal.init(elems);
+
+      // open the modal
+      instance.open();
+
+      // event listener button to close instance
+      let closeHandler = document.querySelector('.modal-close');
+      closeHandler.addEventListener('click', function () {
+        instance.close();
+      });
     }
   }
 }
@@ -54,6 +103,4 @@ document
   .querySelector('.register-form')
   .addEventListener('submit', registerHandler);
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginHandler);
+document.querySelector('.login-form').addEventListener('submit', loginHandler);

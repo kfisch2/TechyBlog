@@ -1,22 +1,10 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const { Comment, Post, User } = require('../../models');
+const { Comment } = require('../../models');
 
 // GET all comments
 router.get('/', (req, res) => {
-  Comment.findAll({
-    attributes: ['id', 'comment_text'],
-    include: [
-      {
-        model: Post,
-        attributes: ['title', 'id'],
-      },
-      {
-        model: User,
-        attributes: ['username'],
-      },
-    ],
-  })
+  Comment.findAll()
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
       console.log(err);
@@ -26,20 +14,17 @@ router.get('/', (req, res) => {
 
 // CREATE a comment
 router.post('/', withAuth, (req, res) => {
-  // check the session
-  if (req.session) {
-    Comment.create({
-      comment_text: req.body.comment_text,
-      post_id: req.body.post_id,
-      // use the id from the session
-      user_id: req.session.user_id,
-    })
-      .then((dbCommentData) => res.json(dbCommentData))
-      .catch((err) => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  }
+  // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
+  Comment.create({
+    comment_text: req.body.comment_text,
+    user_id: req.session.user_id,
+    post_id: req.body.post_id
+  })
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 // DELETE comment by id
