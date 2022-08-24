@@ -4,18 +4,21 @@ async function saveFormHandler(event) {
   /* defining this as post_title made the post title not update,
   however the button and redirect still worked */
   const title = document.querySelector('input[name="post-title"]').value.trim();
+  const post_text = document
+    .querySelector('textarea[name="text_content"]')
+    .value.trim();
 
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
-  if (title) {
-    // console.log(title);
+  if (title || post_text) {
+    console.log(title, post_text);
     const response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         title,
-        text_content
+        post_text,
       }),
       headers: {
         'Content-Type': 'application/json',
