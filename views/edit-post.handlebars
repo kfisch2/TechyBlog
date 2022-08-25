@@ -1,27 +1,27 @@
 <article>  
-  <a href="/dashboard"> &larr; go back</a>
-  <section class="col s12 m4 l6 new-post"> 
+  <a href='/dashboard'> &larr; go back</a>
+  <section class='col s12 m4 l6 new-post'> 
     <h6>Edit your post</h6>
     {{!-- Post title--}}
-    <form class="edit-post-form">
+    <form class='edit-post-form'>
       <div class='row'>
         <div class='input-field col s6'>
-          <input id='post-title' name="post-title" type='text' placeholder="title" value="{{post.title}}" />
+          <input id='post-title' name='post-title' type='text' placeholder='title' value='{{post.title}}' />
         </div>
       </div>
       {{!--Text area--}}
-      <div class="row">
-          <div class="input-field col s12">
-            <input name="post-text" placeholder="post" value="{{post.post_text}}"></input>
+      <div class='row'>
+          <div class='input-field col s12'>
+            <input name='post-text' placeholder='post' value='{{post.post_text}}'></input>
           </div>
       </div>
 
-      <button type="submit" class="save-post-btn btn">Update post</button>
-      <button type="button" class="delete-post-btn btn">Delete post</button>
+      <button type='submit' class='save-post-btn btn'>Update post</button>
+      <button type='button' class='delete-post-btn btn'>Delete post</button>
     </form>
   </section>
 
 {{> comments post.comments }}
 
-<script src="/js/edit-post.js"></script>
-<script src="/js/delete-post.js"></script>
+<script src='/js/edit-post.js'></script>
+<script src='/js/delete-post.js'></script>

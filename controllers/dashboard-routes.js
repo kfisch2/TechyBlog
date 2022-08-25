@@ -5,19 +5,14 @@ const { Post, User, Comment } = require('../models');
 
 // /dashboard
 router.get('/', withAuth, (req, res) => {
-  console.log(req.session)
+  console.log(req.session);
   Post.findAll({
     where: {
       // use the ID from the session
       user_id: req.session.user_id,
     },
     order: [['created_at', 'DESC']],
-    attributes: [
-      'id',
-      'title',
-      'post_text',
-      'created_at',
-    ],
+    attributes: ['id', 'title', 'post_text', 'created_at'],
     include: [
       {
         model: Comment,

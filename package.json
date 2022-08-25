@@ -1,5 +1,5 @@
 {
-  "name": "techyblog",
+  "name": "nerd-herd",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kfisch2/TechyBlog.git"
+    "url": "git+https://github.com/kfisch2/nerd-herd.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kfisch2/TechyBlog/issues"
+    "url": "https://github.com/kfisch2/nerd-herd/issues"
   },
-  "homepage": "https://github.com/kfisch2/TechyBlog#readme",
+  "homepage": "https://github.com/kfisch2/nerd-herd#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.4",

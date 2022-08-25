@@ -10,24 +10,23 @@ async function saveFormHandler(event) {
     window.location.toString().split('/').length - 1
   ];
 
-    const response = await fetch(`/api/posts/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({
-        title,
-        post_text,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
+  const response = await fetch(`/api/posts/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      title,
+      post_text,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert(response.statusText);
   }
-
+}
 
 document
   .querySelector('.save-post-btn')
