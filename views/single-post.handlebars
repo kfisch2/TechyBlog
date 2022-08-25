@@ -1,16 +1,20 @@
-{{> post-info post}}
-
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <input name="comment-body" placeholder="Leave a comment..."></input>
+<div class="row" style="display: flex; align-items: center;">
+  <div class="col m6">
+    {{> post-info post }}
   </div>
-  <div>
-    <button type="submit" class="btn">add comment</button>
-  </div>
-</form>
-{{/if}}
 
+  {{#if loggedIn}}
+    <form class="comment-form comment col s12 m6 l6 xl6">
+      <div>
+        <textarea rows="5" name="comment-body" placeholder="Leave a comment..."></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn-small btn">add comment</button>
+      </div>
+    </form>
+  {{/if}}
+  
+</div>
 {{> comments post.comments }}
 
 {{#if loggedIn}}

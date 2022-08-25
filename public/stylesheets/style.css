@@ -22,8 +22,7 @@ header nav a {
   margin-right: 25px;
   display: inline-block;
   position: relative;
-  color: rgb(255, 255, 255); 
-
+  color: rgb(255, 255, 255);
 }
 
 header nav a:after {
@@ -55,7 +54,7 @@ header nav a:hover:after {
 
 body {
   /* background-color: rgba(56, 153, 47, 0.473); */
-  background-image: url("https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg?w=2000");
+  background-image: url('https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg?w=2000');
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,12 +66,18 @@ body {
   font-size: 1.5rem;
 }
 
-.btn {
-  color: azure;
-  background-color: #0d0c1d88
+textarea {
+  height: auto;
+  overflow: hidden;
+  resize: none;
 }
 
-.btn:hover{
+.btn {
+  color: azure;
+  background-color: #0d0c1d88;
+}
+
+.btn:hover {
   color: azure;
   background-color: #282950;
 }
@@ -93,16 +98,15 @@ li {
   margin-bottom: 10px;
 }
 
-li:nth-child(odd) {
+li:nth-child(even) {
   background-color: #fbfdff;
 }
 
-li:nth-child(even) {
+li:nth-child(odd) {
   background-color: #c8d6d6;
-
 }
 
-.new-post, .comment-form {
+.new-post {
   /* position: sticky; */
   z-index: -999;
   padding: 20px;
@@ -113,11 +117,6 @@ li:nth-child(even) {
   background-color: rgb(255, 255, 255);
 }
 
-/* .comments:nth-child(odd) {
-  background-color: #fbfdff;
+textarea {
+  margin-bottom: 5px;
 }
-
-.comments:nth-child(even) {
-  background-color: #c8d6d6;
-
-} */
