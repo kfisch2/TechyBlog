@@ -117,6 +117,6 @@ li:nth-child(odd) {
   background-color: rgb(255, 255, 255);
 }
 
-textarea {
-  margin-bottom: 5px;
-}
+/* .dashboard {
+  display: flex;
+} */
