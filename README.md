@@ -1,10 +1,9 @@
 # NerdHerd
 ![nerdherd](https://user-images.githubusercontent.com/102554319/186791917-340034a3-52cb-4917-859e-71f1e592792d.png)
-https://murmuring-refuge-53660.herokuapp.com/login
 
 ## Description
 
-This CMS-style blog allowes users to signup with a username and email to login and publish articles, blog posts, thoughts, and opions. The user will also be able to post comments and engage with the tech community.
+This CMS-style blog allowes users to signup with a username and email to login and publish articles, blog posts, thoughts, and opions. The user will also be able to post comments and engage with the tech community. <a href='https://murmuring-refuge-53660.herokuapp.com' target='_blank'>Check it out here!</a>
 
 ## Table of Contents
 
